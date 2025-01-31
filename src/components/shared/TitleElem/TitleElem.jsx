@@ -1,12 +1,6 @@
-import React from 'react'
-import style from './Title.module.scss'
+import style from './TitleElem.module.scss'
 
-interface TitleProps {
-	tag: 'h1' | 'h2' | 'h3'
-	text: string
-}
-
-export const Title = ({ tag, text }: TitleProps) => {
+export const TitleElem = ({ tag, text }) => {
 	switch (tag) {
 		case 'h1':
 			return <h1 className={style.h1}>{text}</h1>

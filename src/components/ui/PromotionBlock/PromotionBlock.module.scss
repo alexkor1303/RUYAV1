@@ -1,0 +1,18 @@
+.promotionWrapper {
+	display: flex;
+	height: 300px;
+	margin-top: 20px;
+	border: 2px solid var(--border-pink-color);
+	border-radius: 15px;
+	margin-bottom: 20px;
+}
+.promotionSections {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.promotionSection {
+	width: 100%;
+	border: 2px solid var(--border-pink-color);
+	border-radius: 15px;
+}

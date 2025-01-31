@@ -1,0 +1,22 @@
+.catalogWrapper {
+	min-height: 500px;
+	margin-bottom: 20px;
+	border: 2px solid var(--border-pink-color);
+	border-radius: 15px;
+	padding: 20px;
+}
+.catalogFilters {
+	margin-bottom: 20px;
+}
+.catalogProducts {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.product {
+	width: 200px;
+	height: 300px;
+	border: 2px solid var(--border-pink-color);
+	border-radius: 15px;
+}
