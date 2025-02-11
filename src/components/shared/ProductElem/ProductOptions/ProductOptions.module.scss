@@ -1,0 +1,19 @@
+.optionsBlock {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--200-pink-color);
+	border-radius: 12px;
+	.optionElem {
+		width: 100%;
+		background-color: transparent;
+		text-align: center;
+		padding: 10px;
+		border-radius: 12px;
+		font-weight: bold;
+		color: var(--800-pink-color);
+		&.activeOption {
+			background-color: white;
+			filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.353));
+		}
+	}
+}

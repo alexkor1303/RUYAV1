@@ -1,42 +1,29 @@
-import { Button } from '../Button/Button'
+import { ProductCounter } from './ProductCounter/ProductCounter'
 import style from './ProductElem.module.scss'
-import cn from 'classnames'
-export const ProductElem = ({
-	image,
-	title,
-	price,
-	subtitle,
-	activeWrap = true,
-	activeSize = 'S',
-}) => {
+import { ProductOptions } from './ProductOptions/ProductOptions'
+const images = import.meta.glob('/src/assets/img/products/*', { eager: true })
+
+export const ProductElem = ({ imageUrl, name, title, wraps, sizes, price }) => {
 	return (
 		<div className={style.wrapper}>
 			<img
-				src={'https://i.pinimg.com/736x/17/a5/59/17a5591ef4a2c13c868d8977f6b17fd2.jpg'}
+				src={images[`/src/assets/img/products/${imageUrl}`]?.default}
 				alt='productPhoto'
 				className={style.image}
 			/>
-			<div className={style.discription}>
-				<p className={style.title}>{title}</p>
-				<p className={style.subTitle}>{subtitle}</p>
-			</div>
+			<section className={style.description}>
+				<p className={style.title}>{name}</p>
+				<p className={style.subTitle}>{title}</p>
+				<p className={style.price}>{price} ₹</p>
+			</section>
 			<div className={style.options}>
-				<section className={style.wrapping}>
-					<span className={cn(style.wrapElem, { [style.active]: activeWrap === true })}>
-						PACKAGE
-					</span>
-					<span className={style.wrapElem}>BOX</span>
-				</section>
-				<section className={style.sizes}>
-					<span className={cn(style.sizeElem, { [style.active]: activeSize === 'S' })}>S</span>
-					<span className={style.sizeElem}>M</span>
-					<span className={style.sizeElem}>L</span>
-				</section>
+				<ProductOptions options={wraps} />
+				<ProductOptions options={sizes} />
 			</div>
-			<div className={style.priceBlock}>
-				<p className={style.price}>{price} rupi</p>
-				<Button />
-			</div>
+			<section className={style.addBlock}>
+				<button className={style.moreInfoButton}>more details</button>
+				<ProductCounter />
+			</section>
 		</div>
 	)
 }

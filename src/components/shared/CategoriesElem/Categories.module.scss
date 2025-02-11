@@ -1,0 +1,34 @@
+.categoriesWrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid var(--800-pink-color);
+	border-bottom: 1px solid var(--800-pink-color);
+	height: 50px;
+	padding: 5px 10px;
+
+	.categories {
+		display: flex;
+		width: 360px;
+	}
+	.categoryIcon {
+		visibility: hidden;
+		opacity: 0;
+		width: 0px;
+		height: 0px;
+		padding-top: 7px;
+		text-align: center;
+		border-radius: 50%;
+		border: 2px solid var(--800-pink-color);
+		color: var(--800-pink-color);
+		&.visibleIcon {
+			background-color: var(--100-pink-color);
+			width: 40px;
+			height: 40px;
+			visibility: visible;
+			margin-right: 14px;
+			opacity: 1;
+		}
+	}
+}

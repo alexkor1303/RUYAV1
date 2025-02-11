@@ -1,6 +1,81 @@
 .wrapper {
-	height: 100px;
-	margin-bottom: 20px;
-	border: 2px solid var(--border-pink-color);
-	border-radius: 15px;
+	margin: 50px 0 20px 0;
+	display: flex;
+	font-weight: bold;
+}
+.leftSide {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	.form {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		gap: 30px;
+		border: 2px solid var(--300-pink-color);
+		background-color: white;
+		input,
+		textarea {
+			width: 100%;
+			background: transparent;
+			border: none;
+			border-bottom: 2px solid var(--300-pink-color);
+			font-size: 16px;
+			resize: none;
+		}
+		::placeholder {
+			font-weight: bold;
+			color: var(--300-pink-color);
+		}
+		input:focus,
+		textarea:focus {
+			font-weight: bold;
+			outline: none;
+			border-bottom: 2px solid var(--300-pink-color);
+		}
+		.formButton {
+			background-color: transparent;
+			padding: 10px;
+			border: 2px solid var(--300-pink-color);
+			border-radius: 10px;
+			font-weight: bold;
+			color: var(--300-pink-color);
+
+			&:hover {
+				background-color: var(--300-pink-color);
+				color: var(--800-pink-color);
+				font-weight: bold;
+			}
+		}
+	}
+}
+.rightSide {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	.backgroundTitle {
+		font-size: 80px;
+		user-select: none;
+		pointer-events: none;
+		color: var(--300-pink-color);
+	}
+	.bottomTitle {
+		display: flex;
+		align-items: center;
+		color: var(--300-pink-color);
+		.line {
+			height: 1px;
+			width: 55%;
+			border: none;
+			margin-right: 30px;
+			border-bottom: 5px solid var(--300-pink-color);
+		}
+	}
+	p {
+		word-wrap: break-word;
+		color: var(--600-pink-color);
+		font-size: 20px;
+	}
 }

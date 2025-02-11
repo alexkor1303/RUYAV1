@@ -1,0 +1,75 @@
+.wrapper {
+	position: relative;
+	font-family: 'Playfair Display';
+	height: 38px;
+}
+
+.block {
+	z-index: 1;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	width: 25px;
+	visibility: hidden;
+	background-color: var(--50-pink-color);
+	border-radius: 12px;
+	&.opened {
+		opacity: 1;
+		visibility: visible;
+		width: 110px;
+	}
+}
+.icon {
+	color: var(--800-pink-color);
+}
+
+.plusButton {
+	z-index: 2;
+	position: absolute;
+	right: 0;
+	height: 100%;
+	padding: 3px 8px 0 8px;
+	width: 110px;
+	border-radius: 12px;
+	background-color: var(--200-pink-color);
+	.icon {
+		color: var(--800-pink-color);
+	}
+	&.activePlusBtn {
+		width: 35px;
+		padding: 3px 8px 0 8px;
+		background-color: var(--200-pink-color);
+	}
+	&:hover {
+		background-color: var(--400-pink-color);
+	}
+	&:active {
+		background-color: var(--700-pink-color);
+		transform: scale(0.98);
+	}
+}
+
+.minusBtn {
+	border: none;
+	background-color: transparent;
+	padding: 3px 8px 0 8px;
+	&.hiddenBtn {
+		visibility: hidden;
+	}
+}
+
+.counter {
+	position: absolute;
+	left: 45%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	width: 30px;
+	font-size: 18px;
+	font-weight: bold;
+	&.hiddenCount {
+		visibility: hidden;
+	}
+}

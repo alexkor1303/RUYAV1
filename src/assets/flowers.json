@@ -1,0 +1,202 @@
+{
+	"bouquets": [
+		{
+			"id": 1,
+			"imageUrl": "1.png",
+			"name": "Pink rose Bouquet",
+			"title": "blalala blala bla",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 1000,
+			"rating": 1,
+			"category": 1
+		},
+		{
+			"id": 2,
+			"imageUrl": "2.png",
+			"name": "Tulips Bouquet",
+			"title": "blalala blala bla",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 3500,
+			"rating": 3,
+			"category": 1
+		},
+		{
+			"id": 3,
+			"imageUrl": "3.png",
+			"name": "ROMASHKA Bouquet",
+			"title": "blalala blala bla",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 2600,
+			"rating": 4,
+			"category": 1
+		},
+		{
+			"id": 4,
+			"imageUrl": "4.png",
+			"name": "Gypsophila Bouquet",
+			"title": "blalala blala bla",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 5100,
+			"rating": 2,
+			"category": 1
+		},
+		{
+			"id": 5,
+			"imageUrl": "5.png",
+			"name": "White rose Bouquet",
+			"title": "blalala blala bla",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 1220,
+			"rating": 5,
+			"category": 1
+		},
+		{
+			"id": 6,
+			"imageUrl": "6.png",
+			"name": "Tulips Bouquet",
+			"title": "blalala blala bla",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 223,
+			"rating": 6,
+			"category": 1
+		},
+		{
+			"id": 7,
+			"imageUrl": "7.png",
+			"name": "Rose, Romashka Bouquet",
+			"title": "blalala blala bla",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 516,
+			"rating": 8,
+			"category": 1
+		},
+		{
+			"id": 8,
+			"imageUrl": "8.png",
+			"name": "Spring Mix Bouquet",
+			"title": "blalala blala bla",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 1243,
+			"rating": 7,
+			"category": 1
+		},
+		{
+			"id": 9,
+			"imageUrl": "6.png",
+			"name": "Sunny Mood Bouquet",
+			"title": "Букет из желтых роз и ромашек, дарящий солнечное настроение",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 2800,
+			"rating": 5,
+			"category": 2
+		},
+		{
+			"id": 10,
+			"imageUrl": "4.png",
+			"name": "Lavender Dreams",
+			"title": "Нежные лавандовые цветы в стильной упаковке",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 3200,
+			"rating": 4,
+			"category": 2
+		},
+		{
+			"id": 11,
+			"imageUrl": "1.png",
+			"name": "Peony Magic",
+			"title": "Роскошные пионы в сочетании с зеленью",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 4500,
+			"rating": 5,
+			"category": 3
+		},
+		{
+			"id": 12,
+			"imageUrl": "2.png",
+			"name": "Red Passion",
+			"title": "Алые розы в элегантной упаковке",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 3900,
+			"rating": 5,
+			"category": 1
+		},
+		{
+			"id": 13,
+			"imageUrl": "3.png",
+			"name": "Forest Whisper",
+			"title": "Композиция из лесных цветов и папоротника",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 2700,
+			"rating": 4,
+			"category": 3
+		},
+		{
+			"id": 14,
+			"imageUrl": "4.png",
+			"name": "Sunflower Love",
+			"title": "Яркие подсолнухи для поднятия настроения",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 2000,
+			"rating": 5,
+			"category": 2
+		},
+		{
+			"id": 15,
+			"imageUrl": "5.png",
+			"name": "Winter Tale",
+			"title": "Зимний букет с еловыми ветками и хлопком",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 3300,
+			"rating": 5,
+			"category": 4
+		},
+		{
+			"id": 16,
+			"imageUrl": "6.png",
+			"name": "Pastel Elegance",
+			"title": "Комбинация нежных пастельных оттенков",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 3600,
+			"rating": 4,
+			"category": 2
+		},
+		{
+			"id": 17,
+			"imageUrl": "7.png",
+			"name": "Exotic Charm",
+			"title": "Экзотические цветы в необычном оформлении",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 5000,
+			"rating": 5,
+			"category": 3
+		},
+		{
+			"id": 18,
+			"imageUrl": "2.png",
+			"name": "Pink Delight",
+			"title": "Композиция из розовых пионов и альстромерий",
+			"wraps": ["Package", "Box"],
+			"sizes": ["S", "M", "L"],
+			"price": 4200,
+			"rating": 5,
+			"category": 1
+		}
+	]
+}

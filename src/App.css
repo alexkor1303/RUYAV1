@@ -1,15 +1,37 @@
 :root {
-	--border-pink-color: #ffc0cb;
+	--50-pink-color: #fbf4fa;
+	--100-pink-color: #f7ecf4;
+	--200-pink-color: #f1d9ec;
+	--300-pink-color: #e7badc;
+	--400-pink-color: #d78fc5;
+	--500-pink-color: #d78fc5;
+	--600-pink-color: #c86eae;
+	--700-pink-color: #b34f91;
+	--800-pink-color: #993d77;
+	--900-pink-color: #6b3055;
+	--950-pink-color: #401730;
+	--main-pink-color: #ffc0f0;
 }
+
 * {
+	font-family: 'Figtree', serif;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	color: var(--800-pink-color);
 	button {
+		border: none;
 		cursor: pointer;
 	}
+	transition-duration: 0.3s;
 }
+
 body {
-	padding: 10px;
-	font-family: 'Playfair Display';
+	background-color: var(--50-pink-color);
+}
+
+main {
+	min-height: 100vh;
 }

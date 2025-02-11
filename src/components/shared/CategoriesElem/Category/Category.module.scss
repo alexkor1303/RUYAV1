@@ -1,0 +1,15 @@
+.categoryButton {
+	display: flex;
+	align-items: center;
+	padding-right: 10px;
+	background-color: transparent;
+	text-align: center;
+	font-size: 20px;
+	color: var(--800-pink-color);
+	cursor: pointer;
+}
+
+.activeCategory {
+	color: var(--800-pink-color);
+	font-weight: 900;
+}
