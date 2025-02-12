@@ -1,14 +1,15 @@
 .wrapper {
-	margin: 50px 0 20px 0;
+	padding: 50px;
 	display: flex;
+	justify-content: center;
 	font-weight: bold;
 }
 .leftSide {
-	width: 50%;
 	display: flex;
 	justify-content: center;
+	margin-right: 50px;
 	.form {
-		width: 50%;
+		width: 300px;
 		display: flex;
 		flex-direction: column;
 		padding: 20px;
@@ -51,7 +52,6 @@
 	}
 }
 .rightSide {
-	width: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;

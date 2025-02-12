@@ -17,8 +17,8 @@ export const Home = () => {
 				style={{ display: 'block', margin: '0 auto', maxWidth: '100%', height: 'auto' }}
 			/>
 			<CatalogBlock />
-			<CallbackBlock />
 			<AboutUsBlock />
+			<CallbackBlock />
 			<ReviewsBlock />
 		</>
 	)

@@ -21,14 +21,24 @@
 	list-style: none;
 	text-decoration: none;
 	color: var(--800-pink-color);
+	transition-duration: 0.3s;
 	button {
 		border: none;
 		cursor: pointer;
 	}
-	transition-duration: 0.3s;
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		color: var(--300-pink-color) !important;
+		position: absolute;
+	}
+	.swiper-pagination-bullet-active {
+		background: var(--500-pink-color) !important;
+	}
 }
 
 body {
+	min-height: 100vh;
 	background-color: var(--50-pink-color);
 }
 
