@@ -1,0 +1,32 @@
+.cartBlock {
+	grid-area: 1 / 1 / 2 / 5;
+	display: flex;
+	min-height: 40rem;
+	flex-direction: column;
+	padding: 1.5rem;
+	border: 1px solid var(--800-pink-color);
+	border-radius: 1.2rem;
+	background-color: var(--50-pink-color);
+}
+
+.cartBlockHeader {
+	font-size: 2rem;
+	font-weight: bold;
+	border-bottom: 0.1rem solid var(--800-pink-color);
+	padding-bottom: 1rem;
+	justify-content: center;
+	.headerTitles {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 1fr;
+		li:last-child {
+			text-align: center;
+		}
+	}
+}
+
+.products {
+	display: flex;
+	flex-direction: column;
+}

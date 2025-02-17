@@ -1,40 +1,41 @@
 .sortWrapper {
-	position: relative;
 	display: flex;
-	justify-content: space-between;
+	justify-content: end;
 	align-items: center;
+	position: relative;
 	gap: 10px;
 	width: 160px;
+	font-size: 1.5rem;
+	color: var(--800-pink-color);
 	cursor: pointer;
 }
-.activeSort {
-	color: var(--950-pink-color);
+.sortBy {
 	font-weight: bold;
+}
+.activeSort {
+	z-index: 2;
 	width: 80px;
 	text-align: center;
-	padding: 5px 0;
-	background-color: var(--300-pink-color);
-	z-index: 2;
+	padding: 1rem 0;
 	border-radius: 12px;
+	color: var(--800-pink-color);
+	font-weight: bold;
+	background-color: var(--200-pink-color);
 	&.activeSortOpen {
-		border-bottom-right-radius: 0;
-		border-bottom-left-radius: 0;
-		border-top-left-radius: 12px;
-		border-top-right-radius: 12px;
-		box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.2);
+		border-radius: 1.2rem 1.2rem 0 0;
+		box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.109);
 	}
 }
 
 .sortBlock {
 	position: absolute;
 	right: 0;
-	top: 29px;
+	top: 3.3rem;
 	width: 80px;
 	text-align: center;
 	visibility: hidden;
 	opacity: 0;
-	border-bottom-right-radius: 12px;
-	border-bottom-left-radius: 12px;
+	border-radius: 0 0 1.2rem 1.2rem;
 }
 
 .openedPopUp {
@@ -49,7 +50,6 @@
 			width: 100%;
 			margin-top: 5px;
 			&:hover {
-				color: var(--950-pink-color);
 				font-weight: bold;
 			}
 		}

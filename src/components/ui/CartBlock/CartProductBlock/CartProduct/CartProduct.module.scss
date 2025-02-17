@@ -1,0 +1,45 @@
+.product {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	align-items: center;
+	border-bottom: 0.1rem solid var(--800-pink-color);
+	padding: 1rem 0;
+}
+.productInfo {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	.productPhoto {
+		width: 7rem;
+		height: 7rem;
+		border-radius: 1.2rem;
+		background-color: var(--200-pink-color);
+	}
+	.productName {
+		font-weight: bold;
+		font-size: 1.8rem;
+	}
+}
+
+.productQuantity {
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+	background-color: var(--100-pink-color);
+	width: fit-content;
+	border-radius: 1.2rem;
+	font-weight: bold;
+	button {
+		background-color: var(--200-pink-color);
+	}
+}
+.productPrice {
+	font-weight: bold;
+	font-size: 1.8rem;
+}
+.productDelete {
+	display: flex;
+	justify-self: center;
+	width: fit-content;
+}

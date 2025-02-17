@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import style from './Categories.module.scss'
+import style from './CatalogOptions.module.scss'
 import cn from 'classnames'
 import { GiFlowerPot } from 'react-icons/gi' //box
 import { GiFlowers } from 'react-icons/gi' //bouqet
@@ -7,7 +7,7 @@ import { RiFlowerFill } from 'react-icons/ri' //flower
 import { Category } from './Category/Category'
 import { Sort } from './Sort/Sort'
 
-export const CategoriesElem = () => {
+export const CatalogOptions = () => {
 	const [activeCategory, setActiveCategory] = useState(0)
 	const categories = ['All', 'Boxes', 'Bouquets', 'Flowers']
 

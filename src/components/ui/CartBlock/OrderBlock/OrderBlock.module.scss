@@ -1,0 +1,75 @@
+.orderBlock {
+	grid-area: 1 / 5 / 2 / 6;
+	height: 49rem;
+	padding: 1.5rem;
+	border: 1px solid var(--800-pink-color);
+	border-radius: 1.2rem;
+	background-color: var(--50-pink-color);
+	.orderTitle {
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.8rem;
+		margin-bottom: 2rem;
+	}
+	.discountBlock {
+		margin-bottom: 2rem;
+		input {
+			font-weight: bold;
+			color: var(--800-pink-color);
+			height: 3rem;
+			padding: 1rem;
+			margin-right: 3rem;
+			outline: 1px solid var(--200-pink-color);
+			border: none;
+			border-radius: 1.2rem;
+			transition: all 0.3s ease;
+			&:focus {
+				outline: none;
+				outline: 1px solid var(--800-pink-color);
+			}
+		}
+		input::placeholder {
+			color: var(--400-pink-color);
+			opacity: 0.5;
+		}
+		button {
+			font-weight: bold;
+			width: 20%;
+		}
+	}
+	.orderInfo {
+		display: flex;
+		justify-content: space-between;
+		width: 60%;
+		border-bottom: 1px solid var(--800-pink-color);
+		margin-bottom: 2rem;
+		.orderCounts {
+			font-weight: bold;
+		}
+		li {
+			margin-bottom: 1.5rem;
+		}
+	}
+	.totalPrice {
+		display: flex;
+		justify-content: space-between;
+		width: 60%;
+		margin-bottom: 2rem;
+		.totalPriceCount {
+			font-weight: bold;
+		}
+	}
+	.additionalInfo {
+		width: 60%;
+		color: var(--400-pink-color);
+		margin-bottom: 2rem;
+	}
+	.orderBottom {
+		display: flex;
+		justify-content: center;
+	}
+	.checkoutButton {
+		font-weight: bold;
+		width: 60%;
+	}
+}

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { LuPlus, LuMinus } from 'react-icons/lu'
 import { FaPlus, FaMinus } from 'react-icons/fa'
 
 import cn from 'classnames'

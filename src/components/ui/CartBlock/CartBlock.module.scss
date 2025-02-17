@@ -1,0 +1,28 @@
+.cartWrapper {
+	height: 100vh;
+	margin: 2rem 2rem 0 2rem;
+	color: var(--800-pink-color);
+	font-size: 1.5rem;
+	h2 {
+		font-size: 3rem;
+	}
+	button {
+		align-items: center;
+		background-color: var(--200-pink-color);
+		padding: 0.8rem;
+		color: var(--800-pink-color);
+		border-radius: 1rem;
+		transition: all 0.3s ease;
+		&:hover {
+			transform: scale(1.1);
+			outline: 1px solid var(--800-pink-color);
+		}
+	}
+	.cartBlocks {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: 1fr;
+		gap: 3rem;
+		margin-top: 2rem;
+	}
+}

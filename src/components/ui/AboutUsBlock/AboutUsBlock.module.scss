@@ -1,46 +1,60 @@
 .wrapper {
-	display: flex;
-	justify-content: space-between;
-	padding: 50px 0 50px 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	align-items: center;
+	padding: 0 6rem;
+	margin-bottom: 5rem;
 	.leftSide {
 		.textBlock {
 			margin-bottom: 50px;
 			.title {
-				font-size: 4vw;
+				color: var(--800-pink-color);
+				font-size: 9rem;
 				font-weight: bold;
 				margin-bottom: 20px;
 			}
 			.subTitle {
-				font-size: 1.5vw;
+				color: var(--200-pink-color);
+				font-size: 4rem;
 			}
 		}
 		.statisticBlock {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			grid-column-gap: 20px;
-			grid-row-gap: 50px;
+			grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+			grid-column-gap: 2rem;
+			grid-row-gap: 5rem;
+
 			.statItem {
 				display: flex;
-				align-items: center;
-				height: 80px;
+				height: 8rem;
 				background-color: var(--200-pink-color);
-				border-radius: 10px;
+				border-radius: 1rem;
+				box-shadow: 0 1rem 0.8rem 0 rgba(0, 0, 0, 0.088);
+
 				.iconSection {
 					height: 100%;
 					align-content: center;
-					padding: 10px 20px;
-					margin-right: 10px;
+					padding: 1rem 2rem;
 					border-radius: 10px;
-					background-color: var(--400-pink-color);
-					.icon {
-						color: white;
-					}
+					color: var(--800-pink-color);
+					background-color: var(--300-pink-color);
+				}
+				.statInfo {
+					display: flex;
+					flex-direction: column;
+					height: 100%;
+					padding: 1rem;
+					justify-content: center;
 				}
 				.statValue {
-					font-size: 20px;
+					color: var(--800-pink-color);
+					font-size: 2.5rem;
 					font-weight: bold;
-					margin-bottom: 5px;
-					margin: 0;
+					margin-bottom: 0.5rem;
+				}
+				.statLabel {
+					color: var(--800-pink-color);
+					font-size: 1.3rem;
 				}
 			}
 		}
@@ -49,6 +63,10 @@
 		display: flex;
 		flex: 1;
 		justify-content: center;
+		@media (max-width: 500px) {
+			justify-content: start;
+			margin-top: 5rem;
+		}
 		.shopPhoto {
 			height: 700px;
 			filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.3));

@@ -1,12 +1,13 @@
 .h1 {
-	font-size: 32px;
+	font-size: 3rem;
 	color: var(--900-pink-color);
 }
 
 .h2 {
-	font-size: 24px;
-	padding-left: 10px;
-	color: var(--500-pink-color);
+	font-size: 5rem;
+	color: var(--800-pink-color);
+	margin-bottom: 20px;
+	user-select: none;
 }
 
 .h3 {

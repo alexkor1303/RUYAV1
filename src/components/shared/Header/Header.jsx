@@ -3,9 +3,11 @@ import logo from '../../../assets/img/U-Logo.png'
 import { useEffect, useState } from 'react'
 import cn from 'classnames'
 import { Link } from 'react-router'
+import { BsCart4 } from 'react-icons/bs'
 
 export const Header = () => {
 	const [scrolled, setScrolled] = useState(false)
+
 	useEffect(() => {
 		const handleScroll = () => {
 			setScrolled(window.scrollY > 0)
@@ -13,18 +15,19 @@ export const Header = () => {
 		window.addEventListener('scroll', handleScroll)
 		return () => window.removeEventListener('scroll', handleScroll)
 	})
+
 	return (
-		<div className={cn(style.headerWrapper, { [style.scrolledHeader]: scrolled })}>
+		<header className={cn(style.wrapper, { [style.scrolledHeader]: scrolled })}>
 			<Link to='/'>
-				<div className={style.headerLeftSide}>
-					<img src={logo} alt='logo' className={style.headerLogo} />
-					<div className={style.headerTitle}>
+				<div className={style.leftSide}>
+					<img src={logo} alt='logo' className={style.logo} />
+					<div className={style.title}>
 						<h1>RUYA</h1>
-						<span className={style.titleSlogan}>FLOWERS STUDIO</span>
+						<span className={style.subTitle}>FLOWERS STUDIO</span>
 					</div>
 				</div>
 			</Link>
-			<nav className={style.headerNavigation}>
+			<nav className={style.navigation}>
 				<ul>
 					<li>create</li>
 					<li>catalog</li>
@@ -34,11 +37,15 @@ export const Header = () => {
 			<div className={style.headerRightSide}>
 				<Link to='/cart'>
 					<div className={style.headerCart}>
-						<div className={style.cartSumCount}>5</div>
-						<div className={style.cartProductCount}>500</div>
+						<div className={style.cartSumCount}>
+							<p>5</p>
+							<BsCart4 />
+						</div>
+						<hr className={style.splitLine} />
+						<div className={style.cartProductCount}>5000 ₹</div>
 					</div>
 				</Link>
 			</div>
-		</div>
+		</header>
 	)
 }

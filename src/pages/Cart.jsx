@@ -1,5 +1,9 @@
-import React from 'react'
+import { CartBlock } from '../components/ui'
 
 export const Cart = () => {
-	return <div>Cart</div>
+	return (
+		<>
+			<CartBlock />
+		</>
+	)
 }

@@ -1,8 +1,8 @@
 import style from './CatalogBlock.module.scss'
-import { ProductElem } from '../../shared/ProductElem/ProductElem'
-import { CategoriesElem } from '../../shared/CategoriesElem/CategoriesElem'
+import { ProductElem } from './ProductElem/ProductElem'
+import { CatalogOptions } from './CatalogOptions/CatalogOptions'
 import { useEffect, useState } from 'react'
-import ProductSkeleton from '../../shared/ProductSkeleton/PorductSkeleton'
+import ProductSkeleton from './ProductSkeleton/PorductSkeleton'
 export const CatalogBlock = () => {
 	const [items, setItems] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
@@ -17,7 +17,7 @@ export const CatalogBlock = () => {
 	return (
 		<div className={style.catalogWrapper}>
 			<section className={style.catalogFilters}>
-				<CategoriesElem />
+				<CatalogOptions />
 			</section>
 			<section className={style.catalogProducts}>
 				{isLoading

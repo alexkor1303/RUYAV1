@@ -1,0 +1,113 @@
+.portalWrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	visibility: hidden;
+	opacity: 0;
+	color: var(--800-pink-color);
+	transition-duration: 0.3s;
+}
+.visible {
+	background: rgba(0, 0, 0, 0.588);
+	opacity: 1;
+	visibility: visible;
+}
+
+.portalContent {
+	position: relative;
+	opacity: 0;
+	display: flex;
+	gap: 2rem;
+	width: 57rem;
+	background: var(--50-pink-color);
+	padding: 2rem;
+	border-radius: 1.2rem;
+	transform: translateY(100px);
+	transition-duration: 0.3s;
+}
+.visibleContent {
+	opacity: 1;
+	transform: translateY(0);
+	transition-duration: 0.3s;
+}
+
+.image {
+	height: 30rem;
+	border-radius: 1.2rem;
+}
+
+.optionSection {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	.name {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+	}
+	.title {
+		font-size: 1.4rem;
+		font-style: italic;
+		font-weight: bold;
+		margin-bottom: 1.5rem;
+	}
+	.price {
+		width: fit-content;
+		border-radius: 0.5rem;
+		padding: 0.5rem;
+		background-color: var(--100-pink-color);
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	.productOptions {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 1rem;
+		border-radius: 1.2rem;
+		background-color: var(--300-pink-color);
+		gap: 2rem;
+		flex-grow: 1;
+		margin-bottom: 1rem;
+	}
+	.addButton {
+		width: 60%;
+		align-self: center;
+		padding: 0.5rem;
+		font-size: 1.5rem;
+		color: var(--800-pink-color);
+		font-weight: bold;
+		border-radius: 0.5rem;
+		background-color: var(--300-pink-color);
+	}
+}
+.closeButton {
+	position: absolute;
+	top: 0;
+	right: -6rem;
+	color: var(--300-pink-color);
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+@media (max-width: 950px) {
+	.portalContent {
+		width: 40rem;
+		flex-direction: column;
+		align-items: center;
+		.optionSection {
+			// justify-content: center;
+			align-items: center;
+			width: 80%;
+			.productOptions {
+				width: 100%;
+				margin-bottom: 3rem;
+			}
+		}
+	}
+}

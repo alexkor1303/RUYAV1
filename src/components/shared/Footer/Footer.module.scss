@@ -1,0 +1,57 @@
+.wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+	border-radius: 1.2rem 1.2rem 0 0;
+	padding: 2rem 2rem;
+	background-color: var(--300-pink-color);
+	font-size: 2rem;
+	color: var(--600-pink-color);
+	hr {
+		width: 80%;
+		height: 2px;
+		border: none;
+		background-color: var(--600-pink-color);
+		opacity: 0.1;
+		margin-bottom: 1rem;
+	}
+}
+.logoSection {
+	flex: 0.5;
+	justify-items: center;
+	margin-bottom: 1rem;
+}
+.linksSection {
+	ul {
+		display: flex;
+		gap: 2rem;
+		justify-content: center;
+		margin-bottom: 1.5rem;
+		li {
+			cursor: pointer;
+			text-align: right;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+.socialMediaIcons {
+	width: 300px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	.icon {
+		cursor: pointer;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+.copyright {
+	margin-top: 1rem;
+	font-size: 1.3rem;
+	color: var(--500-pink-color);
+}

@@ -1,0 +1,79 @@
+.wrapper {
+	z-index: 999;
+	position: sticky;
+	top: 0;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(auto, 1fr));
+	align-items: center;
+	padding: 1rem;
+	background-color: #fbf4fad8;
+	&.scrolledHeader {
+		border-radius: 0px 0px 12px 12px;
+		box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.2);
+	}
+}
+
+.leftSide {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	color: var(--800-pink-color);
+	font-size: 1.5rem;
+	.logo {
+		width: 50px;
+		height: 50px;
+	}
+	.title {
+		display: flex;
+		flex-direction: column;
+		.subTitle {
+			font-size: 2rem;
+			display: inline-block;
+		}
+	}
+}
+
+.navigation {
+	display: flex;
+	justify-content: center; // Выравниваем контент по центру
+	align-items: center;
+	ul {
+		font-size: 2rem;
+		display: flex;
+		gap: 10px;
+		li {
+			cursor: pointer;
+			color: var(--800-pink-color);
+			&:hover {
+				transform: scale(1.1); // Увеличивает текст без влияния на ширину
+				color: var(--900-pink-color);
+			}
+		}
+	}
+}
+.headerRightSide {
+	display: flex;
+	justify-content: flex-end;
+	.headerCart {
+		box-sizing: border-box;
+		min-width: 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 2rem;
+		padding: 10px;
+		border-radius: 1.2rem;
+		font-size: 2rem;
+		color: var(--800-pink-color);
+		background-color: var(--200-pink-color);
+		.cartSumCount {
+			display: flex;
+			gap: 1rem;
+		}
+		.splitLine {
+			height: 2rem;
+			width: 0.2rem;
+			border: 1px solid #993d777e;
+		}
+	}
+}

@@ -16,7 +16,7 @@ export const Sort = () => {
 
 	return (
 		<div className={style.sortWrapper} onClick={() => setOpen(!open)}>
-			<p>Sort by :</p>
+			<p className={style.sortBy}>Sort by :</p>
 			<p className={cn(style.activeSort, { [style.activeSortOpen]: open })}>{sortName}</p>
 			<div className={cn(style.sortBlock, { [style.openedPopUp]: open })}>
 				<ul className={cn(style.sortList, { [style.openedList]: open })}>

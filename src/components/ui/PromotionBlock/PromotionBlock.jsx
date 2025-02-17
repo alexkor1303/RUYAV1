@@ -7,13 +7,16 @@ export const PromotionBlock = () => {
 	return (
 		<div className={style.promotionWrapper}>
 			<div className={style.promotionSections}>
-				<section className={style.promotionSectionOne}>
+				<section className={style.promotionSection}>
+					<p className={style.promoText}>Diwali decoration</p>
 					<img src={firstPoromoImage} alt='' className={style.promotionPhoto} />
 				</section>
-				<section className={style.promotionSectionTwo}>
+				<section className={style.promotionSection}>
+					<p className={style.promoText}>Holiday decoration</p>
 					<img src={secondPoromoImage} alt='' className={style.promotionPhoto} />
 				</section>
-				<section className={style.promotionSectionThree}>
+				<section className={style.promotionSection}>
+					<p className={style.promoText}>Wedding decoration</p>
 					<img src={thirdPoromoImage} alt='' className={style.promotionPhoto} />
 				</section>
 			</div>

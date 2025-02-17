@@ -1,9 +1,14 @@
+import { useState } from 'react'
 import { ProductCounter } from './ProductCounter/ProductCounter'
-import style from './ProductElem.module.scss'
 import { ProductOptions } from './ProductOptions/ProductOptions'
+import { ProductPortal } from '../ProductPortal/ProductPortal'
+import style from './ProductElem.module.scss'
+
 const images = import.meta.glob('/src/assets/img/products/*', { eager: true })
 
 export const ProductElem = ({ imageUrl, name, title, wraps, sizes, price }) => {
+	const [isPortalOpen, setIsPortalOpen] = useState(false)
+
 	return (
 		<div className={style.wrapper}>
 			<img
@@ -16,14 +21,30 @@ export const ProductElem = ({ imageUrl, name, title, wraps, sizes, price }) => {
 				<p className={style.subTitle}>{title}</p>
 				<p className={style.price}>{price} ₹</p>
 			</section>
-			<div className={style.options}>
+			<section className={style.options}>
 				<ProductOptions options={wraps} />
 				<ProductOptions options={sizes} />
-			</div>
+			</section>
 			<section className={style.addBlock}>
-				<button className={style.moreInfoButton}>more details</button>
+				<button className={style.moreInfoButton} onClick={() => setIsPortalOpen(!isPortalOpen)}>
+					more details
+				</button>
 				<ProductCounter />
 			</section>
+			{isPortalOpen && (
+				<ProductPortal
+					product={{
+						name,
+						title,
+						price,
+						wraps,
+						sizes,
+						imageUrl: images[`/src/assets/img/products/${imageUrl}`]?.default,
+					}}
+					status={isPortalOpen}
+					onClose={() => setIsPortalOpen(false)}
+				/>
+			)}
 		</div>
 	)
 }
