@@ -9,12 +9,34 @@
 
 .catalogProducts {
 	padding: 2rem;
-	max-width: 100%;
 	box-sizing: border-box;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
 	grid-column-gap: 1rem;
 	grid-row-gap: 3rem;
-	justify-items: center;
+	justify-items: start;
 	border-top: none;
+}
+.emptyCatalog {
+	display: flex;
+	justify-content: center;
+	min-height: 30rem;
+}
+
+.emptyBlock {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	.emptyText {
+		font-size: 5rem;
+		font-weight: bold;
+		color: var(--800-pink-color);
+		margin-bottom: 4rem;
+	}
+	.emptyIcon {
+		color: var(--800-pink-color);
+		background-color: white;
+		border-radius: 50%;
+	}
 }

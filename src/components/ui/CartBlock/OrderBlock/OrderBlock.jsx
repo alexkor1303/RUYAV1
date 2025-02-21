@@ -1,4 +1,6 @@
 import style from './OrderBlock.module.scss'
+import { IoInformationCircleOutline } from 'react-icons/io5'
+
 export const OrderBlock = () => {
 	return (
 		<div className={style.orderBlock}>
@@ -28,8 +30,12 @@ export const OrderBlock = () => {
 				<span className={style.totalPriceCount}>3000 ₹</span>
 			</div>
 			<p className={style.additionalInfo}>
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati earum expedita adipisci
-				eligendi quod
+				<span>
+					<IoInformationCircleOutline size={25} />
+				</span>
+				<span>
+					To clarify the details of your order, please contact our shop at +7(913)399-37-76
+				</span>
 			</p>
 			<div className={style.orderBottom}>
 				<button className={style.checkoutButton}>Checkout Now</button>

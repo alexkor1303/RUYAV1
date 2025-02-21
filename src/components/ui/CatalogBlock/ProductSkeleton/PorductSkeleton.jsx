@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader'
 
-const ProductSkeleton = props => (
+export const ProductSkeleton = props => (
 	<ContentLoader
 		speed={3}
 		width={260}
@@ -19,5 +19,3 @@ const ProductSkeleton = props => (
 		<rect x='134' y='464' rx='16' ry='16' width='115' height='40' />
 	</ContentLoader>
 )
-
-export default ProductSkeleton

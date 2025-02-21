@@ -1,5 +1,4 @@
 .cartWrapper {
-	height: 100vh;
 	margin: 2rem 2rem 0 2rem;
 	color: var(--800-pink-color);
 	font-size: 1.5rem;
@@ -12,11 +11,6 @@
 		padding: 0.8rem;
 		color: var(--800-pink-color);
 		border-radius: 1rem;
-		transition: all 0.3s ease;
-		&:hover {
-			transform: scale(1.1);
-			outline: 1px solid var(--800-pink-color);
-		}
 	}
 	.cartBlocks {
 		display: grid;
@@ -24,5 +18,24 @@
 		grid-template-rows: 1fr;
 		gap: 3rem;
 		margin-top: 2rem;
+	}
+	.backButton {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		height: 5rem;
+		width: 10rem;
+		margin: 2rem 0;
+		font-weight: bold;
+		color: var(--300-pink-color);
+		transition: all 0.3s ease;
+		.leftArrow {
+			padding-top: 0.3rem;
+		}
+		&:hover {
+			color: var(--800-pink-color);
+			border: 1px solid var(--800-pink-color);
+		}
 	}
 }

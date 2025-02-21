@@ -9,13 +9,18 @@ import {
 	CatalogBlock,
 } from '../components/ui/index'
 import style from './pages.module.scss'
+import { useEffect } from 'react'
 
 export const Home = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 	return (
-		<>
+		<main>
 			<MainPageBanner />
 			<TitleElem text='Flowers and Gifts for every occasion' tag='h2' />
 			<PromotionBlock />
+			{/*Перенести блоки и стили в  компоненты*/}
 			<div className={style.block}>
 				<img
 					src={secondBanner}
@@ -29,15 +34,18 @@ export const Home = () => {
 				/>
 			</div>
 			<CatalogBlock />
+			{/*Перенести блоки и стили в  компоненты*/}
 			<div className={style.block}>
 				<AboutUsBlock />
 			</div>
+			{/*Перенести блоки и стили в  компоненты*/}
 			<div className={style.block}>
 				<CallbackBlock />
 			</div>
+			{/*Перенести блоки и стили в  компоненты*/}
 			<div className={style.block}>
 				<ReviewsBlock />
 			</div>
-		</>
+		</main>
 	)
 }

@@ -1,6 +1,7 @@
 import style from './CartBlock.module.scss'
 import { CartProductBlock } from './CartProductBlock/CartProductBlock'
 import { OrderBlock } from './OrderBlock/OrderBlock'
+import { FaChevronLeft } from 'react-icons/fa'
 
 export const CartBlock = () => {
 	return (
@@ -10,6 +11,14 @@ export const CartBlock = () => {
 				<CartProductBlock />
 				<OrderBlock />
 			</div>
+			<a href='/'>
+				<button className={style.backButton}>
+					<span>
+						<FaChevronLeft className={style.leftArrow} />
+					</span>
+					<span>Go back</span>
+				</button>
+			</a>
 		</div>
 	)
 }

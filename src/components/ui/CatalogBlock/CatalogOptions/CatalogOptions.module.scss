@@ -11,7 +11,6 @@
 	padding: 5px 10px;
 
 	.categories {
-		width: 500px;
 		display: flex;
 		align-items: center;
 	}
@@ -25,6 +24,7 @@
 		border-radius: 50%;
 		border: 2px solid var(--800-pink-color);
 		color: var(--800-pink-color);
+		transition: all 0.3s ease;
 		&.visibleIcon {
 			background-color: var(--100-pink-color);
 			width: 40px;

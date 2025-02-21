@@ -1,10 +1,9 @@
 .sortWrapper {
 	display: flex;
-	justify-content: end;
 	align-items: center;
-	position: relative;
 	gap: 10px;
-	width: 160px;
+	width: 20rem;
+	position: relative;
 	font-size: 1.5rem;
 	color: var(--800-pink-color);
 	cursor: pointer;
@@ -14,7 +13,7 @@
 }
 .activeSort {
 	z-index: 2;
-	width: 80px;
+	width: 13rem;
 	text-align: center;
 	padding: 1rem 0;
 	border-radius: 12px;
@@ -31,18 +30,23 @@
 	position: absolute;
 	right: 0;
 	top: 3.3rem;
-	width: 80px;
+	width: 13rem;
 	text-align: center;
 	visibility: hidden;
 	opacity: 0;
 	border-radius: 0 0 1.2rem 1.2rem;
+	transition: all 0.3s ease-in-out;
 }
 
 .openedPopUp {
 	visibility: visible;
 	opacity: 1;
-	height: 80px;
+	padding: 1.5rem 1rem 1.5rem 1rem;
 	background-color: var(--300-pink-color);
+
+	.activeListSort {
+		background-color: var(--200-pink-color);
+	}
 	ul {
 		height: 100%;
 		transition: opacity 0.1s;

@@ -1,10 +1,17 @@
 .orderBlock {
 	grid-area: 1 / 5 / 2 / 6;
-	height: 49rem;
+	max-height: fit-content;
 	padding: 1.5rem;
 	border: 1px solid var(--800-pink-color);
 	border-radius: 1.2rem;
 	background-color: var(--50-pink-color);
+	transition: all 0.3s ease;
+	button {
+		font-weight: bold;
+		&:hover {
+			outline: 1px solid var(--800-pink-color);
+		}
+	}
 	.orderTitle {
 		text-align: center;
 		font-weight: bold;
@@ -12,6 +19,7 @@
 		margin-bottom: 2rem;
 	}
 	.discountBlock {
+		display: flex;
 		margin-bottom: 2rem;
 		input {
 			font-weight: bold;
@@ -33,8 +41,7 @@
 			opacity: 0.5;
 		}
 		button {
-			font-weight: bold;
-			width: 20%;
+			width: 8rem;
 		}
 	}
 	.orderInfo {
@@ -60,7 +67,9 @@
 		}
 	}
 	.additionalInfo {
-		width: 60%;
+		display: flex;
+		align-content: center;
+		gap: 1rem;
 		color: var(--400-pink-color);
 		margin-bottom: 2rem;
 	}
