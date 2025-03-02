@@ -1,0 +1,22 @@
+.paginationWrapper {
+	padding: 1rem;
+	justify-self: center;
+	display: flex;
+	gap: 1rem;
+}
+.pageButton {
+	transition: all 0.3s ease;
+	padding: 0.6rem 1rem;
+	background-color: transparent;
+	border-radius: 50%;
+	background-color: var(--300-pink-color);
+	color: #fff;
+	&:hover {
+		background-color: var(--500-pink-color);
+	}
+}
+.activePage {
+	color: var(--800-pink-color);
+	font-weight: bold;
+	background-color: white;
+}

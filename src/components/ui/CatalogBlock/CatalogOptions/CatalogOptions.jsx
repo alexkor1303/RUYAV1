@@ -6,18 +6,11 @@ import { RiFlowerFill } from 'react-icons/ri' //flower
 import { Category } from './Category/Category'
 import { Sort } from './Sort/Sort'
 import { Search } from './Search/Search'
+import { useSelector } from 'react-redux'
 
-export const CatalogOptions = ({
-	category,
-	onClickCategory,
-	sortType,
-	onChangeSort,
-	searchValue,
-	setSearchValue,
-}) => {
-	console.log(category, sortType)
+export const CatalogOptions = () => {
+	const category = useSelector(state => state.filterSlice.categoryId)
 	const categories = ['All', 'Bouquets', 'Boxes', 'Flowers']
-
 	const getIcon = index => {
 		switch (index) {
 			case 1:
@@ -42,14 +35,13 @@ export const CatalogOptions = ({
 							key={index}
 							currentIndex={index}
 							activeIndex={category}
-							category={categoryName}
-							handleChangeCategory={() => onClickCategory(index)}
+							categoryName={categoryName}
 						/>
 					)
 				})}
 			</div>
-			<Search searchValue={searchValue} setSearchValue={setSearchValue} />
-			<Sort value={sortType} onChangeSort={onChangeSort} />
+			<Search />
+			<Sort />
 		</div>
 	)
 }

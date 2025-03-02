@@ -1,79 +1,51 @@
-import style from './CatalogBlock.module.scss'
+import { useSelector } from 'react-redux'
+import { useRef } from 'react'
 import { ProductElem } from './ProductElem/ProductElem'
-import { CatalogOptions } from './CatalogOptions/CatalogOptions'
-import { useEffect, useState } from 'react'
-import { ProductSkeleton } from './ProductSkeleton/PorductSkeleton'
-import { FaRegFaceSadCry } from 'react-icons/fa6'
+//обратить внимание на размер функции
+import style from './CatalogBlock.module.scss'
 import cn from 'classnames'
+import { ProductSkeleton } from './ProductSkeleton/PorductSkeleton'
+import { CatalogOptions } from './CatalogOptions/CatalogOptions'
+import { FaRegFaceSadCry } from 'react-icons/fa6'
+import { Pagination } from './Pagination/Pagination'
+import { useProducts } from '../../../hooks/useProducts'
+import { useSyncFiltersUrl } from '../../../hooks/useSyncFiltersUrl'
+
 export const CatalogBlock = () => {
-	const [searchValue, setSearchValue] = useState('')
-	const [categoryId, setCategoryId] = useState(0)
-	const [items, setItems] = useState([])
-	const [isLoading, setIsLoading] = useState(true)
-	const [sortType, setSortType] = useState({
-		name: 'Popular',
-		sortProperty: 'rating',
+	//filter params coming from url?
+	const isSearch = useRef(false)
+	//Filters,sorts,searchInput properties
+	const { categoryId, sortType, searchValue, page } = useSelector(state => state.filterSlice)
+	const sortProperty = sortType.sortProperty
+	//GetProducts from backend
+	const { items, isLoading, emptyCatalog } = useProducts({
+		categoryId,
+		sortProperty,
+		searchValue,
+		page,
+		isSearch,
 	})
-	const [emptyCatalog, setEmptyCatalog] = useState(false)
-	const [currentPage, setCurrentPage] = useState(1)
-	const search = searchValue ? `&search=${searchValue}` : ''
-	const category = categoryId ? `&category=${categoryId}` : ''
-	const sortBy = sortType.sortProperty.replace('-', '')
-	const order = sortType.sortProperty.includes('-') ? 'desc' : 'asc'
-
-	useEffect(() => {
-		setIsLoading(true)
-		fetch(
-			`https://66e418b2d2405277ed130e46.mockapi.io/api/v1/flowers?page=${currentPage}&limit=14${search}${category}&sortBy=${sortBy}&order=${order}`,
-		)
-			.then(res => {
-				if (!res.ok) {
-					setEmptyCatalog(true)
-					throw new Error('Ошибка загрузки данных с сервера')
-				}
-				return res.json()
-			})
-			.then(arr => {
-				if (Array.isArray(arr)) {
-					console.log(arr)
-					setItems(arr)
-					setEmptyCatalog(false)
-				} else {
-					throw new Error('Некорректный формат данных')
-				}
-				setIsLoading(false)
-			})
-			.catch(error => {
-				console.error(error)
-				setItems(new Array(10))
-				setIsLoading(false)
-			})
-	}, [categoryId, sortType, searchValue])
-
+	//Url search params
+	useSyncFiltersUrl({ sortProperty, categoryId, page, isSearch })
+	//Products or skeleton render
 	const products = items.map(item => <ProductElem key={item.id} {...item} />)
-	const productSkeletons = [...new Array(10)].map((_, index) => <ProductSkeleton key={index} />)
+	const productSkeletons = [...new Array(14)].map((_, index) => <ProductSkeleton key={index} />)
 
 	return (
 		<div className={style.catalogWrapper}>
 			<section className={style.catalogFilters}>
-				<CatalogOptions
-					category={categoryId}
-					onClickCategory={i => setCategoryId(i)}
-					sortType={sortType}
-					onChangeSort={i => setSortType(i)}
-					searchValue={searchValue}
-					setSearchValue={setSearchValue}
-				/>
+				<CatalogOptions />
 			</section>
 			<section className={cn(style.catalogProducts, { [style.emptyCatalog]: emptyCatalog })}>
 				{isLoading ? productSkeletons : products}
 				{emptyCatalog && (
 					<div className={style.emptyBlock}>
-						<p className={style.emptyText}>Unfortunately we couldn't find anything</p>
+						<p className={style.emptyText}>Unfortunately we couldnt find anything</p>
 						<FaRegFaceSadCry size={90} className={style.emptyIcon} />
 					</div>
 				)}
 			</section>
+			<Pagination />
 		</div>
 	)
 }

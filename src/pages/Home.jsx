@@ -9,12 +9,8 @@ import {
 	CatalogBlock,
 } from '../components/ui/index'
 import style from './pages.module.scss'
-import { useEffect } from 'react'
 
 export const Home = () => {
-	useEffect(() => {
-		window.scrollTo(0, 0)
-	}, [])
 	return (
 		<main>
 			<MainPageBanner />
