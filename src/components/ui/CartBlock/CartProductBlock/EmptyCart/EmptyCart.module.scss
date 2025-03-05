@@ -1,0 +1,14 @@
+.emptyCart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10rem;
+	.upperParagraph {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+	}
+	p {
+		font-size: 5rem;
+	}
+}

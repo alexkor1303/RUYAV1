@@ -21,6 +21,7 @@
 	}
 	.promotionPhoto:hover,
 	.promotionSection:active {
+		transition: all 0.3s ease;
 		filter: saturate(100%) contrast(100%);
 		transform: scale(1.02);
 	}

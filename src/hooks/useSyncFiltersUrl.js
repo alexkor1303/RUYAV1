@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 import { setFilters } from '../redux/slices/filterSlice'
 import { sortTypes } from '../components/ui/CatalogBlock/CatalogOptions/Sort/Sort'
 import qs from 'qs'
-export const useSyncFiltersUrl = ({ sortProperty, categoryId, page, isSearch }) => {
+export const useSyncFiltersUrl = ({ sortProperty, categoryId, page, isParamsFromUrl }) => {
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
 	const isMounted = useRef(false)
@@ -12,7 +12,6 @@ export const useSyncFiltersUrl = ({ sortProperty, categoryId, page, isSearch }) 
 	useEffect(() => {
 		//ломается если передается неправильная строка после ?
 		if (window.location.search) {
-			console.log('params reads and past to url')
 			const params = qs.parse(window.location.search.substring(1))
 			const sort = sortTypes.find(obj => obj.sortProperty === params.sortProperty)
 			dispatch(
@@ -21,13 +20,12 @@ export const useSyncFiltersUrl = ({ sortProperty, categoryId, page, isSearch }) 
 					sort,
 				}),
 			)
-			isSearch.current = true
+			isParamsFromUrl.current = true
 		}
 	}, [])
 
 	// 2. При изменении фильтров обновляем URL (кроме первого рендера)
 	useEffect(() => {
-		console.log('params changed on redux and past to url')
 		if (isMounted.current) {
 			const queryString = qs.stringify({
 				sortProperty,

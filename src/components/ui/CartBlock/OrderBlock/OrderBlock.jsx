@@ -1,7 +1,8 @@
 import style from './OrderBlock.module.scss'
 import { IoInformationCircleOutline } from 'react-icons/io5'
-
+import { useSelector } from 'react-redux'
 export const OrderBlock = () => {
+	const { deliveryFee, discount, totalPrice } = useSelector(state => state.cartSlice)
 	return (
 		<div className={style.orderBlock}>
 			<p className={style.orderTitle}>Order Summery</p>
@@ -12,22 +13,20 @@ export const OrderBlock = () => {
 			<div className={style.orderInfo}>
 				<section className={style.orderOverview}>
 					<ul>
-						<li>Sub total</li>
 						<li>Discount</li>
 						<li>Delivery fee</li>
 					</ul>
 				</section>
 				<section className={style.orderPrices}>
 					<ul className={style.orderCounts}>
-						<li>5000 ₹</li>
-						<li>2500 ₹</li>
-						<li>500 ₹</li>
+						<li>{discount} ₹</li>
+						<li>{deliveryFee} ₹</li>
 					</ul>
 				</section>
 			</div>
 			<div className={style.totalPrice}>
 				<span>Total</span>
-				<span className={style.totalPriceCount}>3000 ₹</span>
+				<span className={style.totalPriceCount}>{totalPrice + deliveryFee + discount} ₹</span>
 			</div>
 			<p className={style.additionalInfo}>
 				<span>

@@ -17,7 +17,6 @@
 	/* 📏 Размеры */
 	--max-width: 1200px;
 	--border-radius: 12px;
-
 	/* 🌍 Тени */
 	--shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
 	--shadow-dark: 0 4px 15px rgba(0, 0, 0, 0.2);

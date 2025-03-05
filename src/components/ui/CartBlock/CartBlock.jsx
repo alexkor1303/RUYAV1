@@ -2,7 +2,7 @@ import style from './CartBlock.module.scss'
 import { CartProductBlock } from './CartProductBlock/CartProductBlock'
 import { OrderBlock } from './OrderBlock/OrderBlock'
 import { FaChevronLeft } from 'react-icons/fa'
-
+import { Link } from 'react-router'
 export const CartBlock = () => {
 	return (
 		<div className={style.cartWrapper}>
@@ -11,14 +11,14 @@ export const CartBlock = () => {
 				<CartProductBlock />
 				<OrderBlock />
 			</div>
-			<a href='/'>
+			<Link to='/'>
 				<button className={style.backButton}>
 					<span>
 						<FaChevronLeft className={style.leftArrow} />
 					</span>
 					<span>Go back</span>
 				</button>
-			</a>
+			</Link>
 		</div>
 	)
 }

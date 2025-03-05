@@ -4,13 +4,20 @@ import { FaPlus, FaMinus } from 'react-icons/fa'
 import cn from 'classnames'
 import style from './ProductCounter.module.scss'
 
-export const ProductCounter = () => {
+export const ProductCounter = ({ onClickPlus, onClickMinus }) => {
 	const [productCount, setProductCount] = useState(0)
-
+	const handleClickPlus = () => {
+		setProductCount(productCount + 1)
+		onClickPlus()
+	}
+	const handleClickMinus = () => {
+		setProductCount(productCount - 1)
+		onClickMinus()
+	}
 	return (
 		<div className={cn(style.wrapper)}>
 			<button
-				onClick={() => setProductCount(productCount + 1)}
+				onClick={handleClickPlus}
 				className={cn(style.plusButton, { [style.activePlusBtn]: productCount > 0 })}
 			>
 				<FaPlus size={12} className={style.icon} />
@@ -19,7 +26,7 @@ export const ProductCounter = () => {
 				<button
 					disabled={productCount === 0}
 					className={cn(style.minusBtn, { [style.hiddenBtn]: productCount <= 0 })}
-					onClick={() => setProductCount(productCount - 1)}
+					onClick={handleClickMinus}
 				>
 					<FaMinus size={12} className={style.icon} />
 				</button>

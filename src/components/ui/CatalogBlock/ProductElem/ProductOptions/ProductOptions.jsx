@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import style from './ProductOptions.module.scss'
 import cn from 'classnames'
-export const ProductOptions = ({ options }) => {
-	const [activeOption, setActiveOption] = useState(0)
+export const ProductOptions = ({ options, activeOption, setActiveOption }) => {
 	return (
 		<div className={style.optionsBlock}>
 			{options &&

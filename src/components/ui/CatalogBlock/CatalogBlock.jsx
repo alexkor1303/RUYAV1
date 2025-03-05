@@ -6,27 +6,25 @@ import style from './CatalogBlock.module.scss'
 import cn from 'classnames'
 import { ProductSkeleton } from './ProductSkeleton/PorductSkeleton'
 import { CatalogOptions } from './CatalogOptions/CatalogOptions'
-import { FaRegFaceSadCry } from 'react-icons/fa6'
 import { Pagination } from './Pagination/Pagination'
 import { useProducts } from '../../../hooks/useProducts'
 import { useSyncFiltersUrl } from '../../../hooks/useSyncFiltersUrl'
 
 export const CatalogBlock = () => {
 	//filter params coming from url?
-	const isSearch = useRef(false)
-	//Filters,sorts,searchInput properties
+	const { items, status } = useSelector(state => state.productSlice)
+	const isParamsFromUrl = useRef(false)
 	const { categoryId, sortType, searchValue, page } = useSelector(state => state.filterSlice)
 	const sortProperty = sortType.sortProperty
-	//GetProducts from backend
-	const { items, isLoading, emptyCatalog } = useProducts({
+	useProducts({
 		categoryId,
 		sortProperty,
 		searchValue,
 		page,
-		isSearch,
+		isParamsFromUrl,
 	})
 	//Url search params
-	useSyncFiltersUrl({ sortProperty, categoryId, page, isSearch })
+	useSyncFiltersUrl({ sortProperty, categoryId, page, isParamsFromUrl })
 	//Products or skeleton render
 	const products = items.map(item => <ProductElem key={item.id} {...item} />)
 	const productSkeletons = [...new Array(14)].map((_, index) => <ProductSkeleton key={index} />)
@@ -36,13 +34,13 @@ export const CatalogBlock = () => {
 			<section className={style.catalogFilters}>
 				<CatalogOptions />
 			</section>
-			<section className={cn(style.catalogProducts, { [style.emptyCatalog]: emptyCatalog })}>
-				{isLoading ? productSkeletons : products}
-				{emptyCatalog && (
+			<section className={cn(style.catalogProducts, { [style.emptyItems]: status === 'error' })}>
+				{status === 'error' ? (
 					<div className={style.emptyBlock}>
 						<p className={style.emptyText}>Unfortunately we couldnt find anything</p>
-						<FaRegFaceSadCry size={90} className={style.emptyIcon} />
 					</div>
+				) : (
+					<>{status === 'loading' ? productSkeletons : products}</>
 				)}
 			</section>
 			<Pagination />

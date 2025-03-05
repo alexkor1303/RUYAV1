@@ -1,13 +1,15 @@
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router'
 import style from './Header.module.scss'
 import logo from '../../../assets/img/U-Logo.png'
-import { useEffect, useState } from 'react'
 import cn from 'classnames'
-import { Link } from 'react-router'
 import { BsCart4 } from 'react-icons/bs'
 
 export const Header = () => {
+	const { totalItemsCount, totalPrice } = useSelector(state => state.cartSlice)
 	const [scrolled, setScrolled] = useState(false)
-
+	const totalCount = totalItemsCount
 	useEffect(() => {
 		const handleScroll = () => {
 			setScrolled(window.scrollY > 0)
@@ -38,11 +40,11 @@ export const Header = () => {
 				<Link to='/cart'>
 					<div className={style.headerCart}>
 						<div className={style.cartSumCount}>
-							<p>5</p>
+							<p>{totalCount}</p>
 							<BsCart4 />
 						</div>
 						<hr className={style.splitLine} />
-						<div className={style.cartProductCount}>5000 ₹</div>
+						<div className={style.cartProductCount}>{totalPrice} ₹</div>
 					</div>
 				</Link>
 			</div>

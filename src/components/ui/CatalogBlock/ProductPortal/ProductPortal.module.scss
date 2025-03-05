@@ -45,10 +45,9 @@
 .optionSection {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	justify-content: space-between;
 	.name {
 		font-size: 2rem;
-		margin-bottom: 2rem;
 	}
 	.title {
 		font-size: 1.4rem;
@@ -80,10 +79,10 @@
 		align-self: center;
 		padding: 0.5rem;
 		font-size: 1.5rem;
-		color: var(--800-pink-color);
 		font-weight: bold;
 		border-radius: 0.5rem;
 		background-color: var(--300-pink-color);
+		color: var(--800-pink-color);
 	}
 }
 .closeButton {
@@ -95,6 +94,7 @@
 	background-color: transparent;
 	cursor: pointer;
 }
+
 @media (max-width: 950px) {
 	.portalContent {
 		width: 40rem;

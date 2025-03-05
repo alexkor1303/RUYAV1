@@ -1,11 +1,24 @@
 import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../../../../redux/slices/cartSlice'
 import { createPortal } from 'react-dom'
 import style from './ProductPortal.module.scss'
 import cn from 'classnames'
 import { IoIosCloseCircleOutline } from 'react-icons/io'
 import { ProductOptions } from '../ProductElem/ProductOptions/ProductOptions'
-export const ProductPortal = ({ status, product, onClose }) => {
+export const ProductPortal = ({
+	status,
+	product,
+	activeSize,
+	activeWrap,
+	setActiveWrap,
+	setActiveSize,
+	onClose,
+	isBouquet,
+}) => {
+	const dispatch = useDispatch()
 	const [isMounted, setIsMounted] = useState(false)
+
 	useEffect(() => {
 		if (status) {
 			setTimeout(() => setIsMounted(true), 200)
@@ -18,6 +31,10 @@ export const ProductPortal = ({ status, product, onClose }) => {
 			onClose()
 		}, 200)
 	}
+	const handleAddItem = obj => {
+		dispatch(addItem(obj))
+		handleClosePortal()
+	}
 	return createPortal(
 		<div className={cn(style.portalWrapper, { [style.visible]: isMounted })}>
 			<div className={cn(style.portalContent, { [style.visibleContent]: isMounted })}>
@@ -25,20 +42,33 @@ export const ProductPortal = ({ status, product, onClose }) => {
 					<img src={product.imageUrl} alt={product.name} className={style.image} />
 				</section>
 				<section className={style.optionSection}>
-					<h2 className={style.name}>{product.name}</h2>
-					<p className={style.title}>{product.title}</p>
-					<p className={style.price}>Price: {product.price} ₹</p>
-					<section className={style.productOptions}>
-						<ProductOptions options={product.wraps} />
-						<ProductOptions options={product.sizes} />
-					</section>
-					<button className={style.addButton} onClick={() => console.log('add on cart')}>
+					<div className={style.productDescription}>
+						<h2 className={style.name}>{product.name}</h2>
+						<p className={style.title}>{product.title}</p>
+						<p className={style.title}>{product.details}</p>
+						<p className={style.price}>Price: {product.price} ₹</p>
+						{isBouquet && (
+							<section className={style.productOptions}>
+								<ProductOptions
+									options={product.wraps}
+									setActiveOption={i => setActiveWrap(i)}
+									activeOption={activeWrap}
+								/>
+								<ProductOptions
+									options={product.sizes}
+									setActiveOption={i => setActiveSize(i)}
+									activeOption={activeSize}
+								/>
+							</section>
+						)}
+					</div>
+					<button className={style.addButton} onClick={() => handleAddItem(product)}>
 						add on cart
 					</button>
-					<button onClick={handleClosePortal} className={style.closeButton}>
-						<IoIosCloseCircleOutline size={40} />
-					</button>
 				</section>
+				<button onClick={handleClosePortal} className={style.closeButton}>
+					<IoIosCloseCircleOutline size={40} />
+				</button>
 			</div>
 		</div>,
 		document.body,
