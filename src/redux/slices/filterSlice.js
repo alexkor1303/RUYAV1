@@ -31,6 +31,8 @@ export const filterSlice = createSlice({
 	},
 })
 
+export const selectFilters = state => state.filterSlice
+
 export const { setCategoryId, setSortType, setSearchValue, setPageCount, setFilters } =
-	filterSlice.actions //методы из reducers
-export default filterSlice.reducer // сам слайс
+	filterSlice.actions
+export default filterSlice.reducer

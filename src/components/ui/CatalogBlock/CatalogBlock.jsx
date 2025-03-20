@@ -9,12 +9,14 @@ import { CatalogOptions } from './CatalogOptions/CatalogOptions'
 import { Pagination } from './Pagination/Pagination'
 import { useProducts } from '../../../hooks/useProducts'
 import { useSyncFiltersUrl } from '../../../hooks/useSyncFiltersUrl'
+import { selectProducts } from '../../../redux/slices/productSlice'
+import { selectFilters } from '../../../redux/slices/filterSlice'
 
 export const CatalogBlock = () => {
 	//filter params coming from url?
-	const { items, status } = useSelector(state => state.productSlice)
+	const { items, status } = useSelector(selectProducts)
 	const isParamsFromUrl = useRef(false)
-	const { categoryId, sortType, searchValue, page } = useSelector(state => state.filterSlice)
+	const { categoryId, sortType, searchValue, page } = useSelector(selectFilters)
 	const sortProperty = sortType.sortProperty
 	useProducts({
 		categoryId,
@@ -31,10 +33,10 @@ export const CatalogBlock = () => {
 
 	return (
 		<div className={style.catalogWrapper}>
-			<section className={style.catalogFilters}>
+			<div className={style.catalogFilters}>
 				<CatalogOptions />
-			</section>
-			<section className={cn(style.catalogProducts, { [style.emptyItems]: status === 'error' })}>
+			</div>
+			<div className={cn(style.catalogProducts, { [style.emptyItems]: status === 'error' })}>
 				{status === 'error' ? (
 					<div className={style.emptyBlock}>
 						<p className={style.emptyText}>Unfortunately we couldnt find anything</p>
@@ -42,7 +44,7 @@ export const CatalogBlock = () => {
 				) : (
 					<>{status === 'loading' ? productSkeletons : products}</>
 				)}
-			</section>
+			</div>
 			<Pagination />
 		</div>
 	)

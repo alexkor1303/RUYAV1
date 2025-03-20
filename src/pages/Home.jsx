@@ -8,8 +8,6 @@ import {
 	ReviewsBlock,
 	CatalogBlock,
 } from '../components/ui/index'
-import style from './pages.module.scss'
-
 export const Home = () => {
 	return (
 		<main>
@@ -17,7 +15,7 @@ export const Home = () => {
 			<TitleElem text='Flowers and Gifts for every occasion' tag='h2' />
 			<PromotionBlock />
 			{/*Перенести блоки и стили в  компоненты*/}
-			<div className={style.block}>
+			<div>
 				<img
 					src={secondBanner}
 					style={{
@@ -30,18 +28,9 @@ export const Home = () => {
 				/>
 			</div>
 			<CatalogBlock />
-			{/*Перенести блоки и стили в  компоненты*/}
-			<div className={style.block}>
-				<AboutUsBlock />
-			</div>
-			{/*Перенести блоки и стили в  компоненты*/}
-			<div className={style.block}>
-				<CallbackBlock />
-			</div>
-			{/*Перенести блоки и стили в  компоненты*/}
-			<div className={style.block}>
-				<ReviewsBlock />
-			</div>
+			<AboutUsBlock />
+			<CallbackBlock />
+			<ReviewsBlock />
 		</main>
 	)
 }

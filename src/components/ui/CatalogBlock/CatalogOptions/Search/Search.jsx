@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setSearchValue } from '../../../../../redux/slices/filterSlice'
+import { selectFilters, setSearchValue } from '../../../../../redux/slices/filterSlice'
 import { CiSearch } from 'react-icons/ci'
 import { IoIosCloseCircleOutline } from 'react-icons/io'
 import cn from 'classnames'
@@ -8,7 +8,7 @@ import style from './Search.module.scss'
 export const Search = () => {
 	const inputRef = useRef(null)
 	const dispatch = useDispatch()
-	const searchValue = useSelector(state => state.filterSlice.searchValue)
+	const searchValue = useSelector(selectFilters).searchValue
 	const handleChangeSearchValue = value => {
 		dispatch(setSearchValue(value))
 	}

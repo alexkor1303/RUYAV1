@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setSortType } from '../../../../../redux/slices/filterSlice'
+import { selectFilters, setSortType } from '../../../../../redux/slices/filterSlice'
 import style from './Sort.module.scss'
 import cn from 'classnames'
 
@@ -13,7 +13,7 @@ export const sortTypes = [
 ]
 export const Sort = () => {
 	const dispatch = useDispatch()
-	const activeSortType = useSelector(state => state.filterSlice.sortType)
+	const activeSortType = useSelector(selectFilters).sortType
 	const handleChangeSortType = obj => {
 		dispatch(setSortType(obj))
 	}

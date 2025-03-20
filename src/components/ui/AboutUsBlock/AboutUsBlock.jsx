@@ -1,3 +1,4 @@
+import cn from 'classnames'
 import style from './AboutUsBlock.module.scss'
 import ShopPhoto from '../../../assets/img/ShopPhoto.png'
 import { GiFlowerPot } from 'react-icons/gi'
@@ -26,7 +27,7 @@ export const AboutUsBlock = () => {
 		},
 	}
 	return (
-		<div className={style.wrapper}>
+		<div className={cn(style.wrapper, 'animatedEmergence')}>
 			<div className={style.leftSide}>
 				<section className={style.textBlock}>
 					<p className={style.title}>

@@ -69,6 +69,7 @@ export const ProductElem = ({ id, imageUrl, name, title, wraps, sizes, price, de
 			</section>
 			{isPortalOpen && (
 				//Порефакторить,хуйня какая-то
+				//сделать через отправку одного id и внутреннего fetch запроса.
 				<ProductPortal
 					product={{
 						id,

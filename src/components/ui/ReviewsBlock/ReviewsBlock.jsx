@@ -61,7 +61,7 @@ export const ReviewsBlock = () => {
 						{reviews.map(({ id, img, text }) => (
 							<div key={id} className={style.reviewCard}>
 								<img src={img} alt='Review' className={style.photo} />
-								<p className={style.text}>"{text}"</p>
+								<p className={style.text}>&#34; {text} &#34;</p>
 							</div>
 						))}
 					</div>

@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import cn from 'classnames'
 import style from './CallbackBlock.module.scss'
+
 export const CallbackBlock = () => {
 	const [formData, setFormData] = useState({
 		name: '',
@@ -15,7 +17,7 @@ export const CallbackBlock = () => {
 		alert('Submitted data:', formData)
 	}
 	return (
-		<div className={style.wrapper}>
+		<div className={cn(style.wrapper, 'animatedEmergence')}>
 			<section className={style.leftSide}>
 				<form className={style.form} onSubmit={handleSubmit}>
 					<input

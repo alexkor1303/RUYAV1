@@ -7,9 +7,10 @@ import { Category } from './Category/Category'
 import { Sort } from './Sort/Sort'
 import { Search } from './Search/Search'
 import { useSelector } from 'react-redux'
+import { selectFilters } from '../../../../redux/slices/filterSlice'
 
 export const CatalogOptions = () => {
-	const category = useSelector(state => state.filterSlice.categoryId)
+	const category = useSelector(selectFilters).categoryId
 	const categories = ['All', 'Bouquets', 'Boxes', 'Flowers']
 	const getIcon = index => {
 		switch (index) {

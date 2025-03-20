@@ -1,11 +1,11 @@
 import { CartProduct } from './CartProduct/CartProduct'
 import { useSelector, useDispatch } from 'react-redux'
-import { clearItems } from '../../../../redux/slices/cartSlice'
+import { clearItems, selectCart } from '../../../../redux/slices/cartSlice'
 import { EmptyCart } from './emptyCart/emptyCart'
 import style from './CartProductBlock.module.scss'
 
 export const CartProductBlock = () => {
-	const products = useSelector(state => state.cartSlice.items)
+	const products = useSelector(selectCart).items
 	const dispatch = useDispatch()
 	const headerTitles = ['Product', 'Quantity', 'Total', 'Action']
 	const handleClearCart = () => {

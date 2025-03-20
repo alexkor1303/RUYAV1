@@ -1,8 +1,9 @@
 import style from './OrderBlock.module.scss'
 import { IoInformationCircleOutline } from 'react-icons/io5'
 import { useSelector } from 'react-redux'
+import { selectCart } from '../../../../redux/slices/cartSlice'
 export const OrderBlock = () => {
-	const { deliveryFee, discount, totalPrice } = useSelector(state => state.cartSlice)
+	const { deliveryFee, discount, totalPrice } = useSelector(selectCart)
 	return (
 		<div className={style.orderBlock}>
 			<p className={style.orderTitle}>Order Summery</p>
